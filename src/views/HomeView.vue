@@ -58,22 +58,38 @@
 <section>
 
 </section>
-{{ academic }}
 <!-- Academic Member -->
-<section class="py-3">
+
+<section v-if="academic_loading">
+  <div class="container">
+    loading....
+  </div>
+</section>
+<section class="py-5 bg-light" v-else>
   <div class="container">
     <h1 style="text-align:center;">Academic Members Profile</h1>
-    <hr/>
-      <carousel :autoplay="true" :margin=10 :dots=true :nav="false" :responsive="{0:{items:1,nav:false,dots:true},600:{items:6,nav:false, dots:true}}">
+      <carousel :autoplay="true" :margin=4 :dots=true :nav="false" :responsive="{0:{items:1,nav:false,dots:true},600:{items:5,nav:false, dots:true}}">
         <div v-for="(academic, index) in academics" :key="index">
-          <img :src="academic.photo" alt="" class="img-fluid " style="width:100; height:100; objectFit:cover;">
+         <el-card shadow="never">
+           <div>
+              <img :src="academic.photo" style="width: 100%;height:150px;objectFit:contain;">
+          </div>
+          <div>
+            <address>
+              <span class="fw-bold">{{ academic.name }}</span> <br>
+              <span style="font-size:14px">{{ academic.title }}</span> <br>
+              <span class="text-primary" style="font-size:14px">{{ academic.designation }}</span> <br>
+              <span class="text-primary" style="font-size:14px"><i class="fa-solid fa-envelope"></i> {{ academic.email }}</span> <br>
+            </address>
+          </div>
+         </el-card>
       </div>
       </carousel>
   </div>
 </section>
 
 <!-- Non-Academic Member -->
-<section>
+<section class="py-5">
   <div class="container">
     <h1 style="text-align:center;">Administrative Members Profile</h1>
     <hr/>
@@ -139,6 +155,7 @@ export default {
       principal:"get_principal",
       coordinator:"get_coordinator",
       academics:"get_academic",
+      academic_loading : 'get_academic_loading',
     })
   },
 

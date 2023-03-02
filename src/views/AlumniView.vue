@@ -1,17 +1,16 @@
 <template>
-    <template-view>
-  
-    </template-view>
-  </template>
-  
-  <script>
-  // @ is an alias to /src
-  import TemplateView from '@/views/TemplateView'
-  
+  <template-view>
+
+  </template-view>
+</template>
+
+<script>
+import TemplateView from './TemplateView.vue'
   export default {
-    name: 'AlumniView',
-    components: {
-      TemplateView
-    }
+      components:{TemplateView}
   }
-  </script>
+</script>
+
+<style scoped>
+
+</style>

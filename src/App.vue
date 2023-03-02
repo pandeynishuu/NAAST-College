@@ -60,6 +60,10 @@ p{
   background-color: var(--kPrimary) !important;
   color: #fff
 }
+
+.text-primary{
+  color: var(--kPrimary) !important;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

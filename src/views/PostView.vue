@@ -1,13 +1,13 @@
 <template>
   <template-view>
-   <section>
+   <section class="py-5">
     <div class="container">
       <div v-if="loading">
         loading...
       </div>
       <div v-else>
         <!-- <h1>{{ post.title }}</h1> -->
-                 <img :src="post.image" alt="" class="float-md-end w-50">
+        <img :src="post.image" alt="" class="float-md-end w-50 rounded img-fluid">
         <div v-html="post.content"></div>
       </div>
     </div>

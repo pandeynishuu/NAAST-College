@@ -9,7 +9,7 @@
             <ul class="navbar-nav">
              
               <li class="nav-item dropdown" v-for="(menu,index) in menus" :key="index">
-                <a class="nav-link"  href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-if="menu.posts.length == 0">
+                <a class="nav-link"  href="#" @click.prevent="$router.push({name: `${menu.url}`})" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-if="menu.posts.length == 0">
                     {{ menu.name }}
                 </a>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-else>
@@ -17,7 +17,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" v-if="menu.posts.length>0">
                   <li v-for="(post,i) in menu.posts" :key="i"><a class="dropdown-item" href="#" @click.prevent="$router.push({name:'post',params:{slug:post.slug}}).then(() => {$router.go()})">{{ post.title }}</a></li>
-                 
                 </ul>
               </li>
             </ul>
