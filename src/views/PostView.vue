@@ -2,8 +2,8 @@
   <template-view>
    <section class="py-5">
     <div class="container">
-      <div v-if="loading">
-        loading...
+      <div v-if="loading" class="w-100 h-100 d-flex align-items-center justify-content-center">
+          <img src="@/assets/loading.gif" class="w-25" alt="">
       </div>
       <div v-else>
         <!-- <h1>{{ post.title }}</h1> -->

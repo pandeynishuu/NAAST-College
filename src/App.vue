@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100057522097898" link-text="Your Page Name" />
-
     <router-view/>
   </div>
 </template>

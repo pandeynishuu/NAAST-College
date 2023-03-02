@@ -68,10 +68,10 @@
 <section class="py-5 bg-light" v-else>
   <div class="container">
     <h1 style="text-align:center;">Academic Members Profile</h1>
-      <carousel :autoplay="true" :margin=4 :dots=true :nav="false" :responsive="{0:{items:1,nav:false,dots:true},600:{items:5,nav:false, dots:true}}">
+      <carousel :autoplay="true" :margin=4 :dots=false :nav="false" :responsive="{0:{items:1,nav:false,dots:false},600:{items:5,nav:false, dots:false}}">
         <div v-for="(academic, index) in academics" :key="index">
          <el-card shadow="never">
-           <div>
+           <div style="w-100">
               <img :src="academic.photo" style="width: 100%;height:150px;objectFit:contain;">
           </div>
           <div>
@@ -80,6 +80,7 @@
               <span style="font-size:14px">{{ academic.title }}</span> <br>
               <span class="text-primary" style="font-size:14px">{{ academic.designation }}</span> <br>
               <span class="text-primary" style="font-size:14px"><i class="fa-solid fa-envelope"></i> {{ academic.email }}</span> <br>
+              <span class="text-primary" style="font-size:14px"><i class="fa-solid fa-phone-square"></i> {{ academic.phone }}</span> <br>
             </address>
           </div>
          </el-card>
@@ -93,7 +94,7 @@
   <div class="container">
     <h1 style="text-align:center;">Administrative Members Profile</h1>
     <hr/>
-      <carousel :autoplay="true" :margin=10 :dots=true :nav="false" :responsive="{0:{items:1,nav:false,dots:true},600:{items:6,nav:false, dots:true}}">
+      <carousel :autoplay=true :margin=10  :nav=false :responsive="{0:{items:1,nav:false,dots:false},600:{items:6,nav:false, dots:false}}">
         <div><img src="https://cdn.pixabay.com/photo/2015/12/15/06/42/kids-1093758__340.jpg" alt=""></div>
         <div><img src="https://cdn.pixabay.com/photo/2018/01/17/07/06/laptop-3087585__340.jpg" alt=""></div>
         <div><img src="https://cdn.pixabay.com/photo/2015/11/15/07/47/geometry-1044090__340.jpg" alt=""></div>
