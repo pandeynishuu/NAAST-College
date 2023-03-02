@@ -18,6 +18,7 @@ export default {
       'fetchPost',
       'fetchSchool',
       'fetchAcademic',
+      'fetchFaq'
     ])
   },
 
@@ -29,6 +30,7 @@ export default {
     this.fetchPost();
     this.fetchSchool();
     this.fetchAcademic();
+    this.fetchFaq();
   }
 }
 </script>

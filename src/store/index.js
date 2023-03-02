@@ -7,6 +7,7 @@ import * as coordinator from './module/home/coordinator'
 import * as post from './module/post'
 import * as school from './module/school'
 import * as academic from './module/home/academic'
+import * as faq from './module/faq'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -17,6 +18,7 @@ export default new Vuex.Store({
     coordinator,
     post,
     school,
-    academic
+    academic,
+    faq
   }
 })
