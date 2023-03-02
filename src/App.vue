@@ -1,28 +1,139 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view/>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapActions } from 'vuex';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  methods:{
+    ...mapActions([
+      'fetchMenu',
+      'fetchPrincipal',
+      'fetchCarousel',
+      'fetchCoordinator',
+      'fetchPost',
+      'fetchSchool',
+    ])
+  },
+
+  created() {
+    this.fetchMenu();
+    this.fetchPrincipal();
+    this.fetchCarousel();
+    this.fetchCoordinator();
+    this.fetchPost();
+    this.fetchSchool();
   }
 }
 </script>
 
 <style>
+:root {
+  --kPrimary:#457B9D ;
+  --kHeading : #000000;
+  --kParagraph : #666666;
+
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--kHeading)
+}
+
+h1{
+  font-size: 2.25rem;
+}
+
+h2{
+  font-size: 2rem
+}
+
+p{
+  font-size: 1rem;
+}
+
+.bg-primary{
+  background-color: var(--kPrimary) !important;
+  color: #fff
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  
 }
+
+.frame {
+  width: 90%;
+  text-align: center;
+}
+button {
+  margin: 20px;
+}
+.custom-btn {
+
+  color: #fff;
+  border-radius: 5px;
+  
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+/* 5 */
+.btn-5 {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: var(--kPrimary);
+background: linear-gradient(0deg, rgb(88, 95, 140) 0%, rgb(101, 125, 190) 100%);
+}
+.btn-5:hover {
+  color: black;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: var(--kPrimary);
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+
+
+
 </style>
