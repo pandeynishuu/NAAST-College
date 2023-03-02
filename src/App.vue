@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100057522097898" link-text="Your Page Name" />
+
     <router-view/>
   </div>
 </template>
@@ -15,6 +17,7 @@ export default {
       'fetchCoordinator',
       'fetchPost',
       'fetchSchool',
+      'fetchAcademic',
     ])
   },
 
@@ -25,6 +28,7 @@ export default {
     this.fetchCoordinator();
     this.fetchPost();
     this.fetchSchool();
+    this.fetchAcademic();
   }
 }
 </script>
@@ -132,8 +136,32 @@ background: linear-gradient(0deg, rgb(88, 95, 140) 0%, rgb(101, 125, 190) 100%);
   transition:800ms ease all;
 }
 
-
-
-
-
+hr{
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
+}
+hr:not([size]) {
+  height: 1px;
+  width: 50%!important;
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+.new{
+  border: 1px solid red;
+  text-decoration: none;
+  background-color: rgb(241, 47, 47);
+  color: white;
+  border-radius: 3px;
+  padding: 1px;
+}
 </style>

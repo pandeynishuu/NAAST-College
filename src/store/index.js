@@ -6,6 +6,7 @@ import * as principal from './module/home/principal'
 import * as coordinator from './module/home/coordinator'
 import * as post from './module/post'
 import * as school from './module/school'
+import * as academic from './module/home/academic'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -15,6 +16,7 @@ export default new Vuex.Store({
     principal,
     coordinator,
     post,
-    school
+    school,
+    academic
   }
 })
