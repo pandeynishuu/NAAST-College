@@ -17,6 +17,13 @@ export default {
       'fetchPost',
       'fetchSchool',
       'fetchAcademic',
+      'fetchAdministrative',
+      'fetchFAQ',
+      'fetchGallery',
+      'fetchDownloads',
+      'fetchNotice',
+      'fetchPedagogy',
+      'fetchAlumini'
     ])
   },
 
@@ -28,6 +35,13 @@ export default {
     this.fetchPost();
     this.fetchSchool();
     this.fetchAcademic();
+    this.fetchAdministrative(); 
+    this.fetchFAQ();
+    this.fetchGallery();
+    this.fetchDownloads();
+    this.fetchNotice();
+    this.fetchPedagogy();
+    this.fetchAlumini();//
   }
 }
 </script>
@@ -39,8 +53,8 @@ export default {
   --kParagraph : #666666;
 
 }
-h1,h2,h3,h4,h5,h6{
-  color: var(--kHeading)
+h1,h2,h3{
+  color: var(--kPrimary)
 }
 
 h1{
@@ -139,26 +153,6 @@ background: linear-gradient(0deg, rgb(88, 95, 140) 0%, rgb(101, 125, 190) 100%);
   transition:800ms ease all;
 }
 
-hr{
-  display: block;
-  unicode-bidi: isolate;
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  overflow: hidden;
-  margin: 1rem 0;
-  color: inherit;
-  background-color: currentColor;
-  border: 0;
-  opacity: .25;
-}
-hr:not([size]) {
-  height: 1px;
-  width: 50%!important;
-  margin-right: auto!important;
-  margin-left: auto!important;
-}
 .new{
   border: 1px solid red;
   text-decoration: none;
@@ -166,5 +160,11 @@ hr:not([size]) {
   color: white;
   border-radius: 3px;
   padding: 1px;
+}
+a{
+  text-decoration: none;
+}
+.footer{
+  background-color: var(--kPrimary)
 }
 </style>

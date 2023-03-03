@@ -1,5 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class=" container d-flex justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
          
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,6 +24,12 @@
           </div>
         </div>
       </nav>
+    <div>
+      <a href="">
+        <button type="button" class="btn">Reserve your Seat</button>
+      </a>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -38,4 +45,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style  scoped>
+.btn {
+  background-color: #970c10;
+  color: white;
+}
+
+</style>
