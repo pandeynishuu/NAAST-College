@@ -5,10 +5,10 @@
         <div class="container d-flex justify-content-between">
           <div>
             <span style="padding-right: 10px"
-              ><i class="fa-solid fa-location-dot"></i>{{ school.address }},
+              ><i class="fa-solid fa-location-dot"></i> {{ school.address }},
             </span>
             <span style="padding-right: 10px"
-              ><i class="fa-solid fa-envelope"></i>{{ school.email }}</span
+              ><i class="fa-solid fa-envelope"></i> {{ school.email }}</span
             >
           </div>
           <div style="color: white">
