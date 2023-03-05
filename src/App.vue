@@ -24,7 +24,8 @@ export default {
       'fetchNotice',
       'fetchPedagogy',
       'fetchAlumni',
-      'fetchBatch'
+      'fetchBatch',
+      'fetchProgram'
     ])
   },
 
@@ -43,7 +44,8 @@ export default {
     this.fetchNotice();
     this.fetchPedagogy();
     this.fetchAlumni();
-    this.fetchBatch()
+    this.fetchBatch();
+    this.fetchProgram();
   }
 }
 </script>

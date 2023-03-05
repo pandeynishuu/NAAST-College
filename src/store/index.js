@@ -15,6 +15,7 @@ import * as notice from './module/notice'
 import * as pedagogy from './module/pedagogy'
 import * as alumini from './module/alumini'
 import * as batch from './module/batch'
+import * as program from './module/home/programs'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -33,6 +34,7 @@ export default new Vuex.Store({
     notice,
     pedagogy,
     alumini,
-    batch
+    batch,
+    program
   }
 })

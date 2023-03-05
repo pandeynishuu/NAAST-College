@@ -14,9 +14,19 @@
 </section>
 
 <!-- program     -->
-<section>
+<section class="py-5">
   <div class="container">
-
+    <h1 style="text-align:center;">Our Programs</h1>
+    <div class="row">
+      <div class="col-md-3" v-for="(program, index) in programs" :key="index">
+        <el-card shadow="hover" class="bg-light">
+          <a href="" @click.prevent="$router.push({name:'post',params:{slug:program.slug}})">
+          <h5 style="text-align:center;">{{ program.title }}</h5>
+          </a>
+        </el-card>  
+      </div>
+      
+    </div>
   </div>
 </section>
 
@@ -175,8 +185,9 @@ export default {
       administrative:"get_administrative",
       administrative_loading : 'get_administrative_loading',
       notices : 'get_notice',
+      programs:'get_program'
     })
   },
-
+  
 }
 </script>
