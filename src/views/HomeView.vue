@@ -1,8 +1,8 @@
 <template>
   <template-view>
-    <div v-if="loading" style="width:100%;height:100vh d-flex jusify-content-center align-items-center">
-        <img src="@/assets/loading.gif" class="w-25" alt="">
-    </div>
+   <div v-if="loading" class="w-100 h-100 d-flex align-items-center justify-content-center">
+          <img src="@/assets/loading.gif" class="w-25" alt="">
+      </div>
 
    <div v-else>
     
