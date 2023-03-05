@@ -53,7 +53,7 @@
       <div class="col-md-8">
         <h1>{{ coordinator.name }}</h1>
         <div v-html="coordinator.content.toString().substring(0, 1250) + '...'"></div>
-       <div class="frame">
+       <div class="frame" @click.prevent="$router.push({name:'post',params:{slug:coordinator.slug}})">
         <a href=""> <button class="custom-btn btn-5"><span>Read More</span></button></a>
        </div>
       </div>
