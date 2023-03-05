@@ -15,12 +15,16 @@
               <tr>
                 <th scope="col" class="w-100 border border-1">Subject</th>
                 <th scope="col" class="border border-1">Action</th>
+            
               </tr>
             </thead>
             <tbody>
               <tr v-for="(download,index) in downloads" :key="index">
                 <td class="border border-1">{{ download.title }}</td>
-                <td class="border border-1"><a :href="download.file" :download="download.file" class="badge bg-primary">Download</a></td>
+                <td class="border border-1">
+                  <a :href="download.file"  class="badge bg-primary" v-if="download.file != null" target="_blank"  >Download</a>
+                  <a :href="download.googleDrive" class="badge bg-primary" v-if="download.googleDrive !=null" target="_blank">Download</a>
+                </td>
                 
               </tr>
             
