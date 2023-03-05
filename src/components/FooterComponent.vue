@@ -54,7 +54,7 @@
                         <h4>Location</h4>
                         <div class="row">
                             <div class="col-md-12">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14242.648482944307!2d87.2862987!3d26.8188851!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9b8526c7c4c7bc1c!2sCode%20IT!5e0!3m2!1sen!2snp!4v1641223938902!5m2!1sen!2snp" class="w-100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <div v-html="school.map" class="w-100"></div>
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div style="background-color: rgb(74, 84, 141);" class="text-white p-1">
-            <center>Powered By: <a href="https://codeitapps.com" class="text-white text-decoration-none">Code IT</a>
+            <center>Powered By: <a href="https://codeit.com.np" class="text-white text-decoration-none">Code IT</a>
             </center>
         </div>
     </section>

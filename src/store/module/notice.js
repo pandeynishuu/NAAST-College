@@ -18,7 +18,7 @@ export const actions = {
    async fetchNotice({commit}){
        try{
           commit('set_notice_loading',true)
-           var response = await axiosApi.get("")
+           var response = await axiosApi.get("notice")
            console.warn(response.data.data)
        if(response.status==200){
           

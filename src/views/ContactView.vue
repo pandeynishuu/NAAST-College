@@ -12,27 +12,15 @@
                     <div class="card border-0 py-5">
                         <div class="card-body">
                             <h1> Get in Touch <i class="fa-solid fa-address-card"></i></h1>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item py-3 px-0 d-flex align-items-center">
-                                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
-                                    <p class="m-0"><strong> Location: </strong><a href="#" class=" text-2"><span style="color:black;">{{ school.address }} </span></a></p>
-                                </li>
-                                <li class="list-group-item py-3 px-0 d-flex align-items-center">
-                                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
-                                    <p class="m-0"><strong> Phone Number: </strong><a href="#" class="text-2"><span style="color:black;">{{ school.contact }}</span></a></p>
-                                </li>
-                                <li class="list-group-item py-3 px-0 d-flex align-items-center">
-                                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                                    <p class="m-0"><strong> Email: </strong><a href="#" class="text-2"><span style="color:black;">{{ school.email }}</span></a></p>
-                                </li>
-                                <li class="list-group-item py-3 px-0 d-flex align-items-center">
-                                    <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                                    <p class="m-0"><strong>School Hour: </strong><a href="#" class="text-decoration-none text-2">
-                                            <div><span style="color:black;">Sunday - Thursday 9:30 AM - 3:30 PM</span></div>
-                                            <div><span style="color:black;">Friday 9:30 AM - 12:30 PM</span></div>
-                                        </a></p>
-                                </li>
-                            </ul>
+                                <ul class="llist-group">
+                                    <li class="list-group-item"><i class="fa-solid fa-school-circle-check"></i> {{ school.name }}</li>
+                                    <hr>
+                                    <li class="list-group-item"><i class="fa-solid fa-earth-americas"></i> {{ school.address }}</li>
+                                     <hr>
+                                    <li class="list-group-item"><i class="fa-solid fa-square-phone"></i> {{ school.contactOne }} <span v-if="school.contactTwo"> / {{school.contactTwo}}</span></li>
+                                    <hr>
+                                    <li class="list-group-item"><i class="fa-solid fa-envelope"></i> {{ school.email }}</li>
+                                </ul>
                         </div>
                     </div>
                 </div>

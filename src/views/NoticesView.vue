@@ -1,56 +1,68 @@
 <template>
-    <template-view>
-      <section class="py-5">
-        <div class="container">
-          <div v-if="loading" class="w-100 h-100 d-flex align-items-center justify-content-center">
-            <img src="@/assets/loading.gif" class="w-25" alt="">
+  <template-view>
+    <section class="py-5">
+      <div class="container">
+        <div
+          v-if="loading"
+          class="w-100 h-100 d-flex align-items-center justify-content-center"
+        >
+          <img src="@/assets/loading.gif" class="w-25" alt="" />
         </div>
-         <div v-else>
-            <h1 style="text-align:center;">General Notice</h1>
+        <section v-else >
+          <div class="container">
+            <h1 style="text-align: center">Notice</h1>
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">Category_id</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Subject</th>
-                  <th scope="col">Download</th>
+                  <th scope="col" class="border border-1">Date</th>
+                  <th scope="col" class="border border-1 w-50">Subject</th>
+                  <th scope="col" class="border border-1">Notice Category</th>
+                  <th scope="col" class="border border-1">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>25-Nov-2022</td>
-                  <td>Foot Tech</td>
-                  <td><a href=""><i class="fa-solid fa-download"></i></a></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                <td>25-Nov-2022</td>
-                  <td>Food Tech</td>
-                  <td><a href=""><i class="fa-solid fa-download"></i></a></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>25-Nov-2022</td>
-                  <td>Food Tech</td>
-                  <td><a href=""><i class="fa-solid fa-download"></i></a></td>
+                <tr v-for="(notice, index) in notices" :key="index">
+                  <td class="border border-1" scope="row">
+                    {{ notice.post_on }}
+                  </td>
+                  <td class="border border-1">
+                    {{ notice.subject }}
+                    <span class="badge bg-danger badge-sm">new</span>
+                  </td>
+                  <td class="border border-1">{{ notice.type }}</td>
+                  <td class="border border-1">
+                    <a
+                      :href="notice.file"
+                      target="_page"
+                      class="badge bg-primary"
+                      >Preview</a
+                    >
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
-         </div>
-      </section>
-    </template-view>
-  </template>
+        </section>
+      </div>
+    </section>
+  </template-view>
+</template>
   
   <script>
-  // @ is an alias to /src
-  import TemplateView from '@/views/TemplateView'
-  
-  export default {
-    name: 'GalleryView',
-    components: {
-      TemplateView
-    }
-  }
-  </script>
+// @ is an alias to /src
+import TemplateView from "@/views/TemplateView";
+import { mapGetters } from "vuex";
+
+export default {
+  name: "GalleryView",
+  components: {
+    TemplateView,
+  },
+  computed: {
+    ...mapGetters({
+      notices: "get_notice",
+    loading: 'get_notice_loading'
+    }),
+  },
+};
+</script>

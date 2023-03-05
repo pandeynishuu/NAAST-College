@@ -13,14 +13,14 @@
           </div>
           <div style="color: white">
             <span
-              ><a href=""
+              ><a :href="school.facebook" target="_blank"
                 ><i
                   class="fa-brands fa-facebook"
                   style="color: white; padding-right: 10px"
                 ></i></a
             ></span>
             <span
-              ><a href=""
+              ><a :href="school.youtube" target="_blank"
                 ><i
                   class="fa-brands fa-youtube"
                   style="color: white; white; padding-right:10px;"
@@ -31,17 +31,17 @@
       </section>
   
       <!-- middle navbar -->
-      <section class="py-2">
+      <section class="py-2 bg-lightPrimary">
         <div class="container">
           <div class="row">
             <div class="col-md-1">
-              <a href="">
+              <a href="" @click.prevent="$router.push({name:'home'})">
                 <img :src="school.logo" width="120" class="img-fluid"/>
               </a>
             </div>
             <div class="col-md-11">
-              <h1>{{ school.name }}</h1>
-              <span>Slogan goes here</span>
+              <div class="fs-1">{{ school.name }}</div>
+              <span class="slogan">{{ school.slogan }}</span>
             </div>
           </div>
         </div>
@@ -78,6 +78,10 @@ import { mapGetters } from 'vuex';
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style  scoped>
+  .slogan{
+    font-family: 'Dancing Script', cursiv ;
+    font-size: 30px;
+    color: var(--kPrimary);
+  }
 </style>

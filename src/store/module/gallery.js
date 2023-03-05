@@ -18,7 +18,7 @@ export const actions = {
    async fetchGallery({commit}){
        try{
           commit('set_gallery_loading',true)
-           var response = await axiosApi.get("")
+           var response = await axiosApi.get("galleries")
            console.warn(response.data.data)
        if(response.status==200){
           

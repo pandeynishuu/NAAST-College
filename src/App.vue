@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100057522097898" link-text="Your Page Name" />
+    <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100057522097898" link-text="Dharan Multiple College" />
     <router-view/>
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
       'fetchDownloads',
       'fetchNotice',
       'fetchPedagogy',
-      'fetchAlumini'
+      'fetchAlumni',
+      'fetchBatch'
     ])
   },
 
@@ -41,7 +42,8 @@ export default {
     this.fetchDownloads();
     this.fetchNotice();
     this.fetchPedagogy();
-    this.fetchAlumini();//
+    this.fetchAlumni();
+    this.fetchBatch()
   }
 }
 </script>
@@ -49,8 +51,10 @@ export default {
 <style>
 :root {
   --kPrimary:#457B9D ;
+  --kSecondary :#ffccff;
   --kHeading : #000000;
   --kParagraph : #666666;
+  --lightPrimary : #DBF2FF
 
 }
 h1,h2,h3{
@@ -72,6 +76,10 @@ p{
 .bg-primary{
   background-color: var(--kPrimary) !important;
   color: #fff
+}
+
+.bg-lightPrimary{
+  background-color: var(--lightPrimary);
 }
 
 .text-primary{

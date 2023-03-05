@@ -18,7 +18,7 @@ export const actions = {
    async fetchDownloads({commit}){
        try{
           commit('set_downloads_loading',true)
-           var response = await axiosApi.get("")
+           var response = await axiosApi.get("download")
            console.warn(response.data.data)
        if(response.status==200){
           

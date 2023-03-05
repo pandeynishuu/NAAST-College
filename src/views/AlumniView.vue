@@ -2,21 +2,50 @@
   <template-view>
       <section class="py-5">
         <div class="container">
-            <p>Alumni (plural of alumnus) refer to an association of people who previously attended or graduated from a particular school, college or university, or people who had a former association with the same organization.</p>
-            <p>The purpose of an association is to foster a spirit of loyalty and to promote the general welfare of one's organization. Alumni associations exist to support the parent organization's goals, and to strengthen the ties between alumni, the community, and the parent organization. By registering or being a member of the alumni therefore is a beautiful way of saying "thank you" to one's parent organization and manifesting earnest sense of belonging.</p>
-            <p>Dharan Multiple Campus (DMC) started B. Tech (Food) program from 2011 with affiliation from Tribhuvan University. Students graduating from this campus have now spread across the country and continents in pursuit of higher studies and job, which have indeed made us very proud.</p>
-            <p>This page is devoted to those members who have started their academic journey from Dharan Multiple Campus and have made tremendous progress in their career. We will be constantly updating this page so that it will serve as an interaction forum for all the members.</p>
-            <p>DMC Alumni currently operates through committee of following composition:</p>
-
+            <h1>{{ alumni.title }}</h1>
+            <img :src="alumni.photo" class="w-50 float-md-end rounded-2" alt="">
+            <div v-html="alumni.description"></div>
         </div>
+      </section>
+
+      <section class="py-5">
+          <div class="container">
+            <div class="row my-5" v-for="(batch,index) in batch" :key=index>
+            <div class="col-md-12">
+              <h3>{{ batch.batch }}</h3>
+              <div class="row g-2">
+                <div class="col-md-6" v-for="(student,i) in batch.students" :key="i">
+                    <el-card shadow="hover">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img :src="student.image" class="img-fluid rounded img-thumbnail" alt="">
+                        </div>
+                        <div class="col-md-8">
+                          <h5>{{ student.name }}</h5>
+                          <div v-html="student.description"></div>
+                        </div>
+                      </div>
+                    </el-card>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
       </section>
   </template-view>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import TemplateView from './TemplateView.vue'
   export default {
-      components:{TemplateView}
+      components:{TemplateView},
+      computed:{
+        ...mapGetters({
+          alumni : 'get_alumni',
+          batch : 'get_batch',
+        })
+      }
   }
 </script>
 

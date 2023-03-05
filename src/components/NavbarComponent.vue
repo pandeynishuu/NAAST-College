@@ -1,6 +1,5 @@
 <template>
-    <div class=" container d-flex justify-content-between">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
          
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,12 +23,7 @@
           </div>
         </div>
       </nav>
-    <div>
-      <a href="">
-        <button type="button" class="btn">Reserve your Seat</button>
-      </a>
-    </div>
-    </div>
+    
 </template>
 
 <script>

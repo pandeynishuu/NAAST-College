@@ -12,8 +12,9 @@ import * as faq from './module/faq'
 import * as gallery from './module/gallery'
 import * as downloads from './module/downloads'
 import * as notice from './module/notice'
-import * as pedagogy from '/module/pedagogy'
+import * as pedagogy from './module/pedagogy'
 import * as alumini from './module/alumini'
+import * as batch from './module/batch'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -31,6 +32,7 @@ export default new Vuex.Store({
     downloads,
     notice,
     pedagogy,
-    alumini
+    alumini,
+    batch
   }
 })

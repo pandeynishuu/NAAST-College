@@ -1,33 +1,33 @@
 import { axiosApi } from "@/config/axios"
 
 export const state = {
-   alumini : [],
-   aluminiLoading : false
+   alumni : {},
+   alumniLoading : false
 }
 export const getters = {
-   get_alumini : (state)=>state.alumini,
-   get_alumini_loading : (state)=>state.aluminiLoading,
+   get_alumni : (state)=>state.alumni,
+   get_alumni_loading : (state)=>state.alumniLoading,
 
 }
 export const mutations = {
-   set_alumini :(state,data) => state.alumini = data,
-   set_alumini_loading :(state,data) => state.aluminiLoading = data
+   set_alumni :(state,data) => state.alumni = data,
+   set_alumni_loading :(state,data) => state.alumniLoading = data
 
 }
 export const actions = {
-   async fetchAlumini({commit}){
+   async fetchAlumni({commit}){
        try{
-          commit('set_alumini_loading',true)
-           var response = await axiosApi.get("")
+          commit('set_alumni_loading',true)
+           var response = await axiosApi.get("alumni")
            console.warn(response.data.data)
        if(response.status==200){
           
-           commit('set_alumini',response.data.data)
+           commit('set_alumni',response.data.data)
        }
        } catch(e){
            console.warn(e)
        }finally{
-        commit('set_alumini_loading',false)
+        commit('set_alumni_loading',false)
        }
    }
 }

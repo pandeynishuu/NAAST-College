@@ -4,7 +4,7 @@
       <img src="@/assets/loading.gif" class="w-25" alt="">
   </div>
     <div v-else>
-    <section>
+    <section class="py-5">
       <div class="container">
         <h1>{{ faqs.question }}</h1>
         <div v-html="faqs.answer"></div>

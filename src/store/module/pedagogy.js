@@ -1,7 +1,7 @@
 import { axiosApi } from "@/config/axios"
 
 export const state = {
-   pedagogy : [],
+   pedagogy : {},
    pedagogyLoading : false
 }
 export const getters = {
@@ -18,7 +18,7 @@ export const actions = {
    async fetchPedagogy({commit}){
        try{
           commit('set_pedagogy_loading',true)
-           var response = await axiosApi.get("")
+           var response = await axiosApi.get("pedagogy")
            console.warn(response.data.data)
        if(response.status==200){
           

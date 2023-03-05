@@ -1,13 +1,13 @@
 <template>
   <template-view>
-    <div v-if="loading">
-      loading...
+    <div v-if="loading" style="width:100%;height:100vh d-flex jusify-content-center align-items-center">
+        <img src="@/assets/loading.gif" class="w-25" alt="">
     </div>
 
    <div v-else>
     
  <!-- carousel  -->
- <section>
+<section>
   <div class="flux-container">
     <carousel-component></carousel-component>
   </div>
@@ -25,7 +25,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <img :src="principal.image" alt="">
+        <img :src="principal.image" class="img-fluid rounded" alt="">
       </div>
       <div class="col-md-8">
         <h1>{{ principal.name }}</h1>
@@ -37,18 +37,18 @@
 </section>
 
 <!-- message about Coordinator -->
-<section class="py-5">
+<section class="py-5 bg-light">
   <div class="container">
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-8">
         <h1>{{ coordinator.name }}</h1>
         <div v-html="coordinator.content.toString().substring(0, 1250) + '...'"></div>
        <div class="frame">
         <a href=""> <button class="custom-btn btn-5"><span>Read More</span></button></a>
        </div>
       </div>
-      <div class="col-md-5">
-        <img :src="coordinator.image" alt="">
+      <div class="col-md-4">
+        <img :src="coordinator.image" class="img-fluid rounded"  alt="">
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
     loading....
   </div>
 </section>
-<section class="py-5 bg-light" v-else>
+<section class="py-5" v-else>
   <div class="container">
     <h1 style="text-align:center;">Academic Members Profile</h1>
     
@@ -124,23 +124,24 @@
 <!-- Notices -->
 <section class="py-5">
   <div class="container">
-    <h1 style="text-align:center;">General Notice</h1>
+    <h1 style="text-align:center;">Notice</h1>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Lastest Update</th>
+          <th scope="col" class="border border-1">Date</th>
+          <th scope="col" class="border border-1 w-50">Subject</th>
+          <th scope="col" class="border border-1">Notice Category</th>
+          <th scope="col" class="border border-1">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">25-Nov-2022</th>
-          <td>http://entrance.tuiost.edu.np:81/ <a href="" class="new">new</a></td>
+        <tr v-for="(notice,index) in notices" :key="index">
+          <td class="border border-1" scope="row">{{ notice.post_on }}</td>
+          <td class="border border-1">{{ notice.subject }} <span class="badge bg-danger badge-sm">new</span></td>
+          <td class="border border-1">{{notice.type}}</td>
+          <td class="border border-1"><a :href="notice.file" target="_page" class="badge bg-primary">Preview</a></td>
         </tr>
-        <tr>
-          <th scope="row">25-Nov-2022</th>
-          <td>Revised B.Tech(Food) Entrance Notice (2079)<a href="" class="new">new</a></td> 
-        </tr>
+        
       </tbody>
     </table> 
   </div>
@@ -166,12 +167,14 @@ export default {
   computed:{
     ...mapGetters({
       menus:"get_menu",
+      loading : 'get_menu_loading',
       principal:"get_principal",
       coordinator:"get_coordinator",
       academics:"get_academic",
       academic_loading : 'get_academic_loading',
       administrative:"get_administrative",
       administrative_loading : 'get_administrative_loading',
+      notices : 'get_notice',
     })
   },
 
