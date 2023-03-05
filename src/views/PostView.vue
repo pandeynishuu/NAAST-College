@@ -7,7 +7,7 @@
       </div>
       <div v-else>
         <!-- <h1>{{ post.title }}</h1> -->
-        <img :src="post.image" alt="" class="float-md-end w-50 rounded m-4">
+        <img :src="post.image" alt="" class="float-md-end w-50 rounded m-8">      
         <div v-html="post.content"></div>
       </div>
     </div>
@@ -32,7 +32,7 @@ import { mapGetters,mapActions } from 'vuex';
         'fetchPost'
       ])
     },
-
+    
   mounted(){
     this.fetchPost(this.slug)
   }

@@ -31,14 +31,14 @@
                     </div>
                     <div class="col-md-3 mb-4">
                         <a href="#" class="text-decoration-none">
-                            <h5 class="text-2 text-center" style="color:white">Information Officer</h5>
-                            </a><div class="d-block align-items-center bg-2 p-1 rounded text-center"><a href="#" class="text-decoration-none">
+                            <h5 style="color:white">Information Officer</h5>
+                            </a><div><a href="#" class="text-decoration-none">
                                 <div class="text-center">
                                     <img src="http://192.168.0.108:8000/images/1677772405.png" class=" " width="80" alt="">
                                 </div>
-                                </a><div class="details ms-1"><a href="#" class="text-decoration-none">
+                                </a><div ><a href="#" class="text-decoration-none">
                                     </a><a href="#" style="color:white">
-                                        <h6 class="mb-0">Prof.Dr.Dhan Bdr.Karki</h6>
+                                        <h6 >Prof.Dr.Dhan Bdr.Karki</h6>
                                     </a>
                                     <a href="#" style="color:white">
                                         <small>9862023343</small>
