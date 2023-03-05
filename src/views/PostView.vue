@@ -6,7 +6,9 @@
           <img src="@/assets/loading.gif" class="w-25" alt="">
       </div>
       <div v-else>
-        <!-- <h1>{{ post.title }}</h1> -->
+        
+        <!-- {{ post }} -->
+        <h1>{{ post.title }}</h1>
         <img :src="post.image" alt="" class="float-md-end w-50 rounded m-8">      
         <div v-html="post.content"></div>
       </div>
@@ -17,25 +19,26 @@
 
 <script>
 import TemplateView from '@/views/TemplateView'
-import { mapGetters,mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
   export default {
     components:{TemplateView},
     props:['slug'],
     computed:{
       ...mapGetters({
-        post:'get_post',
-        loading:'get_post_loading',
-      })
+        menus:'get_menu'
+      }),
+
+      posts(){
+        return this.menus.map((m) => m.posts.find((p) => p.slug == this.slug))
+      },
+
+      post(){
+        return this.posts.find((p) => p != null)
+      }
     },
-    methods:{
-      ...mapActions([
-        'fetchPost'
-      ])
-    },
+  
     
-  mounted(){
-    this.fetchPost(this.slug)
-  }
+  
   }
 </script>
 

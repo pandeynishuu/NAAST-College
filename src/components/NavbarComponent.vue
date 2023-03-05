@@ -16,7 +16,7 @@
                     {{ menu.name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" v-if="menu.posts.length>0">
-                  <li v-for="(post,i) in menu.posts" :key="i"><a class="dropdown-item" href="#" @click.prevent="$router.push({name:'post',params:{slug:post.slug}}).then(() => {$router.go()})">{{ post.title }}</a></li>
+                  <li v-for="(post,i) in menu.posts" :key="i"><a class="dropdown-item" href="#" @click.prevent="$router.push({name:'post',params:{slug:post.slug}})">{{ post.title }}</a></li>
                 </ul>
               </li>
             </ul>

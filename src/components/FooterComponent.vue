@@ -3,7 +3,7 @@
         <div  class="footer py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 mb-4">
+                    <div class="col-md-4">
                         <address>
                             <h5> Contact us</h5>
                             <span>{{ school.address }}</span> <br>
@@ -15,7 +15,7 @@
 
                     </div>
 
-                    <div class="col-md-3 mb-4">
+                    <div class="col-md-4">
                         <h5>Related</h5>
                         <ul class="m-0 p-0 list-unstyled">
                             <li> <a class="text-white" target="_blank" href="">UGC</a>
@@ -29,7 +29,7 @@
                         </ul>
 
                     </div>
-                    <div class="col-md-3 mb-4">
+                    <!-- <div class="col-md-3">
                         <a href="#" class="text-decoration-none">
                             <h5 style="color:white">Information Officer</h5>
                             </a><div><a href="#" class="text-decoration-none">
@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                         
-                    </div>
-                    <div class="col-md-3 mb-4">
+                    </div> -->
+                    <div class="col-md-4">
                         <h4>Location</h4>
                         <div class="row">
                             <div class="col-md-12">
@@ -63,8 +63,8 @@
             </div>
         </div>
         <div style="background-color: rgb(74, 84, 141);" class="text-white p-1">
-            <center>Powered By: <a href="https://codeit.com.np" class="text-white text-decoration-none">Code IT</a>
-            </center>
+            <center>Powered By: <a href="https://codeit.com.np" class="text-white text-decoration-none">Code IT</a></center>
+            <center>Prithvi Path, Dharan, Sunsari | <a class="text-white"  href="tel:+977-25-525163">+977-25-525163</a></center>
         </div>
     </section>
 
