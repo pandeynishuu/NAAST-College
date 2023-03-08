@@ -18,7 +18,7 @@ export default {
       'fetchFAQ',
       'fetchGallery',
       'fetchDownloads',
-      'fetchNotice',
+      'fetchNotices',
       'fetchLatestNotice',
       'fetchPedagogy',
       'fetchAlumni',
@@ -36,7 +36,7 @@ export default {
     this.fetchFAQ(),
     this.fetchGallery(),
     this.fetchDownloads(),
-    this.fetchNotice(),
+    this.fetchNotices(),
     this.fetchPedagogy(),
     this.fetchAlumni(),
     this.fetchBatch()
@@ -46,11 +46,11 @@ export default {
 
 <style>
 :root {
-  --kPrimary:#3F497F ;
+  --kPrimary:#01a451 ;
   --kSecondary :#ffccff;
   --kHeading : #000000;
   --kParagraph : #666666;
-  --lightPrimary : #E3E6FA
+  --lightPrimary : #E9F8F0
 
 }
 h1,h2,h3{

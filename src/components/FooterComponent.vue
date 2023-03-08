@@ -11,7 +11,7 @@
                             <a :href="`mailto:${school.email}`" class="text-primary">
                                 <i class="fas fa-envelope"></i> {{ school.email }}<br>
                             </a>
-                             <a :href="`mailto:${school.email}`" class="text-primary">
+                             <a :href="`tel:${school.contactOne}`" class="text-primary">
                                 <i class="fas fa-phone-square"></i> {{ school.contactOne }} <span v-if="school.contactTwo != null"> / {{school.contactTwo }}</span><br>
                             </a>
                             
@@ -20,16 +20,12 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h5>Related</h5>
+                        <h5>Quick Links</h5>
                         <ul class="m-0 p-0 list-unstyled">
-                            <li> <a class="text-primary" target="_blank" href="">UGC</a>
+                            <li> <a class="text-primary" target="_blank" href="" @click.prevent="$router.push({name:'notices'})">Notice</a>
                             </li>
-                            <li> <a class="text-primary" target="_blank" href="">T.U</a></li>
-                            <li><a class="text-primary" target="_blank" href="">T.U
-                                    IOST</a>
-                            </li>
-                            <li> <a class="text-primary" target="_blank" href="">BALKHU
-                                    EXAM</a></li>
+                            <li> <a class="text-primary" target="_blank" href="" @click.prevent="$router.push({name:'gallery'})">Photo Gallery</a></li>
+                            
                         </ul>
                     </div>
                    

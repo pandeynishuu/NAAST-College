@@ -20,7 +20,17 @@
     </div>
 
     <div v-else>
-      
+      <section class="bg-primary py-1">
+          <div class="container d-flex justify-content-between">
+            <div class="me-2">Notice:</div>
+            <div class="w-100"><marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" onload="this.start()" direction="left">
+              <span v-for="(notice,index) in notices" :key="index" class="me-2">
+               <a class="text-white" href="" @click.prevent="$router.push({name:'notices'})"> <span v-for="(n,i) in notice.notices" :key="i">{{ n.subject }}</span></a>
+              </span>
+            </marquee>
+            </div>
+          </div>
+      </section>
       <!-- carousel  -->
       <section v-if="carousel.length > 0">
         <div class="flux-container">
@@ -74,36 +84,78 @@
             }"
           >
             <div>
-              <el-card>
+              <el-card shadow="never">
                   <h5 class="fw-bold">Bus Facilities</h5>
                   <p>Holy Garden Academy offers convenient bus facilities for students' transportation needs.</p>
                 </el-card>
             </div>
             <div>
-              <el-card>
+              <el-card shadow="never">
                 <h5 class="fw-bold">Coaching & Remedial Class</h5>
-                <p>Holy Garden Academy provides coaching and remedial classes for academic success.</p>
+                <p>We provide remedial class for the students who are in need of extra guidance and attention.</p>
               </el-card>
             </div>
             <div>
-              <el-card>
+              <el-card shadow="never">
                 <h5 class="fw-bold">Day Boarder</h5>
                 <p>Holy Garden Academy accommodates day boarders with comfortable facilities.</p>
               </el-card>
             </div>
             <div>
-              <el-card>
+              <el-card shadow="never">
                 <h5 class="fw-bold">ICT Lab</h5>
                 <p>Holy Garden Academy's state-of-the-art ICT lab provides students with a technology-rich learning environment.</p>
               </el-card>
             </div>
             <div>
-              <el-card>
+              <el-card shadow="never">
                 <h5 class="fw-bold">Well Equipped Library</h5>
                 <p>Holy Garden Academy's well-equipped library offers vast academic resources.</p>
               </el-card>
             </div>
           </carousel>
+        </div>
+      </section>
+
+      <!-- Mission and Vision -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-2">
+            <div class="col-md-3">
+              <el-card shadow="hover">
+                <h5>Our Mission</h5>
+              <p>Our school empowers all our students to dream big, believe in their abilities to achieve the dreams through their academic excellence along with their emotional, social and physical well-being.</p>
+              </el-card>
+            </div>
+
+            <div class="col-md-3">
+              <el-card shadow="hover">
+                <h5>Our Vision</h5>
+              <p>We understand ever individual child is unique with their own god gifted potentials. We aim to hone their talent to excel in life and make a rich for themselves through love, care and inspiration.</p>
+              </el-card>
+            </div>
+
+            <div class="col-md-6">
+              <el-card shadow="hover">
+                <h5>Teaching-Learning Pedagogies</h5>
+                <ul>
+                  <li>Project Based Learning</li>
+                  <li>Using Multiple Intelligence in teaching-learning</li>
+                  <li>Lecture, Role-Play, Interactive-Learning,Group-Works, Task-Based Learning, Cross-Curricular-Method are used while teaching-learning</li>
+                  <li>A blend of Eastern and Western educational philosophies are applied</li>
+                  <li>Emphasis is on learning by doing,rather than rot learning</li>
+                </ul>
+              </el-card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Feature Plans -->
+      <section class="py-5 bg-lightPrimary">
+        <div class="container">
+          <h1>Our Feature Plans</h1>
+          <p>We will upgrade the class every year. class 6 (six) this year to class XII, in near future. A very limited number of students would be enrolled every year to maintain Holy Garden's Academic Excellence and it's enviable legacy. We aimed to be best! </p>
         </div>
       </section>
 
@@ -113,7 +165,7 @@
       </section>
       <section class="py-5 bg-white text-center" v-else>
         <div class="container">
-          <h1>Photo Galleries</h1>
+          <h1>Photo Gallery</h1>
           <carousel
             :autoplay="true"
             :nav="false"
@@ -134,8 +186,8 @@
       </section>
 
       <!-- Members -->
-      <section class="text-center bg-light py-5">
-        <div class="container" v-for="(member,index) in members" :key="index">
+      <section class="text-center bg-light py-5 "  v-for="(member,index) in members" :key="index">
+        <div class="container">
             <h1>{{ member.title }}</h1>
           <carousel
             :autoplay="true"
@@ -159,46 +211,6 @@
               </el-card>
             </div>
           </carousel>
-        </div>
-      </section>
-
-      <!-- News & Events -->
-      <section class="text-center bg-light py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1>News & events</h1>
-              <p>Coming Soon</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- school notice -->
-      <section class="text-center bg-light py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h1>School Notices</h1>
-              <p>Coming Soon</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- school calender & bus routes -->
-      <section class="text-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h1 >School Calender</h1>
-              <p>Coming Soon</p>
-            </div>
-            <div class="col-md-6">
-              <h1>Bus Routes</h1>
-              <p>Coming Soon</p>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -9,30 +9,30 @@
           <img src="@/assets/loading.gif" class="w-25" alt="" />
         </div>
         <section v-else >
-          <div class="container">
-            <h1 style="text-align: center">Notice</h1>
+          <div class="container" v-for="(notice,index) in notices" :key="index">
+            <h1 style="text-align: center">{{ notice.title }}</h1>
             <table class="table table-striped">
               <thead>
-                <tr>
-                  <th scope="col" class="border border-1">Date</th>
+                <tr class="bg-primary">
+                  <th scope="col" class="border border-1">Published on</th>
                   <th scope="col" class="border border-1 w-50">Subject</th>
                   <th scope="col" class="border border-1">Notice Category</th>
                   <th scope="col" class="border border-1">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(notice, index) in notices" :key="index">
+                <tr v-for="(n, index) in notice.notices" :key="index">
                   <td class="border border-1" scope="row">
-                    {{ notice.post_on }}
+                    {{ n.createdAt }}
                   </td>
                   <td class="border border-1">
-                    {{ notice.subject }}
+                    {{ n.subject }}
                     <span class="badge bg-danger badge-sm">new</span>
                   </td>
-                  <td class="border border-1">{{ notice.type }}</td>
+                  <td class="border border-1">{{ n.noticeCategory }}</td>
                   <td class="border border-1">
                     <a
-                      :href="notice.file"
+                      :href="n.file"
                       target="_page"
                       class="badge bg-primary"
                       >Preview</a
@@ -60,8 +60,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      notices: "get_notice",
-    loading: 'get_notice_loading'
+      notices: "get_notices",
+    loading: 'get_notices_loading'
     }),
   },
 };

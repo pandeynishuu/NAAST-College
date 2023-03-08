@@ -2,30 +2,28 @@
   <div class="d-flex flex-column" style="height: 100vh">
     <header>
       <section class="py-2 bg-primary" v-if="!isMobile">
-        <div class="container d-flex justify-content-between">
+        <div class="container d-flex justify-content-between align-items-center">
           <div>
             <span style="padding-right: 10px"
-              ><i class="fa-solid fa-location-dot"></i> {{ school.street }}, {{ school.city }}
+              ><i class="fa-solid fa-location-dot"></i> {{ school.street }},
+              {{ school.city }}
             </span>
             <span style="padding-right: 10px"
               ><i class="fa-solid fa-envelope"></i> {{ school.email }}</span
             >
           </div>
-          <div style="color: white">
+          <div class="text-white d-flex align-items-center">
             <span
               ><a :href="school.facebook" target="_blank"
-                ><i
-                  class="fa-brands fa-facebook"
-                  style="color: white; padding-right: 10px"
-                ></i></a
+                ><i class="fa-brands fa-facebook fs-4 text-white"></i> </a
             ></span>
             <span
               ><a :href="school.youtube" target="_blank"
-                ><i
-                  class="fa-brands fa-youtube"
-                  style="color: white; white; padding-right:10px;"
-                ></i></a
+                ><i class="fa-brands fa-youtube fs-4  ms-2"></i></a
             ></span>
+
+            <a class="ms-2 btn btn-warning btn-sm" href="/admin/login">Login</a>
+            <a class="ms-2 btn btn-warning btn-sm" href="/webmail">Mail</a>
           </div>
         </div>
       </section>
@@ -40,7 +38,7 @@
               </a>
             </div>
             <div class="ms-2">
-              <div class="fs-1">{{ school.name }}</div>
+              <h1 class="fs-1">{{ school.name }}</h1>
               <span class="slogan fs-6" style="color: red">{{
                 school.slogan
               }}</span>
@@ -92,6 +90,4 @@ export default {
 .fs-1 {
   font-size: calc(0.75rem + 1.3vw) !important;
 }
-
-
 </style>

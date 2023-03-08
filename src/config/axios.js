@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosApi = axios.create({
-    baseURL: 'http://192.168.0.100:8000/api/',  
+    baseURL: 'https://holygardenacademy.com/api/',  
     headers:{'Accept': 'application/json','Content-Type':'application/json'}
    
 })
