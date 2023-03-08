@@ -6,10 +6,9 @@
           <img src="@/assets/loading.gif" class="w-25" alt="">
       </div>
       <div v-else>
-        
         <!-- {{ post }} -->
         <h1>{{ post.title }}</h1>
-        <img :src="post.image" alt="" class="float-md-end w-50 rounded m-8">      
+        <img :src="post.image" alt="" class="float-md-end w-50 img-fluid rounded m-4">      
         <div v-html="post.content"></div>
       </div>
     </div>

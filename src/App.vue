@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100057522097898" link-text="Dharan Multiple College" />
+    <vue-facebook-page data-href="https://www.facebook.com/profile.php?id=100054747010732" link-text="Holy Garden Academy" />
     <router-view/>
   </div>
 </template>
@@ -11,13 +11,10 @@ export default {
   methods:{
     ...mapActions([
       'fetchMenu',
-      'fetchPrincipal',
+      'fetchMembers',
       'fetchCarousel',
-      'fetchCoordinator',
       'fetchPost',
       'fetchSchool',
-      'fetchAcademic',
-      'fetchAdministrative',
       'fetchFAQ',
       'fetchGallery',
       'fetchDownloads',
@@ -25,38 +22,33 @@ export default {
       'fetchPedagogy',
       'fetchAlumni',
       'fetchBatch',
-      'fetchProgram'
     ])
   },
 
   created() {
-    this.fetchMenu();
-    this.fetchPrincipal();
-    this.fetchCarousel();
-    this.fetchCoordinator();
-    this.fetchPost();
-    this.fetchSchool();
-    this.fetchAcademic();
-    this.fetchAdministrative(); 
-    this.fetchFAQ();
-    this.fetchGallery();
-    this.fetchDownloads();
-    this.fetchNotice();
-    this.fetchPedagogy();
-    this.fetchAlumni();
-    this.fetchBatch();
-    this.fetchProgram();
+    this.fetchMenu(),
+    this.fetchCarousel(),
+    this.fetchMembers(),
+    this.fetchPost(),
+    this.fetchSchool(),
+    this.fetchFAQ(),
+    this.fetchGallery(),
+    this.fetchDownloads(),
+    this.fetchNotice(),
+    this.fetchPedagogy(),
+    this.fetchAlumni(),
+    this.fetchBatch()
   }
 }
 </script>
 
 <style>
 :root {
-  --kPrimary:#457B9D ;
+  --kPrimary:#3F497F ;
   --kSecondary :#ffccff;
   --kHeading : #000000;
   --kParagraph : #666666;
-  --lightPrimary : #DBF2FF
+  --lightPrimary : #E3E6FA
 
 }
 h1,h2,h3{
