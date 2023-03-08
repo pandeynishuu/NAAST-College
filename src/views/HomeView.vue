@@ -1,5 +1,17 @@
 <template>
   <template-view>
+    <modal name="notice" v-if="latestNotice" 
+    :min-width="200"
+    :min-height="200"
+    :reset="true"
+    width="30%"
+    height="auto"
+    @before-open="beforeOpen"
+    @opened="opened"
+    @before-close="beforeClose"
+    @closed="closed" class="v-model">
+      <img :src="latestNotice.file" alt="" /> 
+  </modal>
     <div
       v-if="loading"
       class="w-100 h-100 d-flex align-items-center justify-content-center"
@@ -8,9 +20,7 @@
     </div>
 
     <div v-else>
-      <modal name="notice" v-if="latestNotice" minWidth="80%">
-          <img :src="latestNotice.file" alt="" /> 
-      </modal>
+      
       <!-- carousel  -->
       <section v-if="carousel.length > 0">
         <div class="flux-container">
@@ -151,6 +161,47 @@
           </carousel>
         </div>
       </section>
+
+      <!-- News & Events -->
+      <section class="text-center bg-light py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>News & events</h1>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- school notice -->
+      <section class="text-center bg-light py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>School Notices</h1>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- school calender & bus routes -->
+      <section class="text-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1 >School Calender</h1>
+              <p>Coming Soon</p>
+            </div>
+            <div class="col-md-6">
+              <h1>Bus Routes</h1>
+              <p>Coming Soon</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </template-view>
 </template>
@@ -197,12 +248,12 @@ export default {
 
     mounted(){
         this.$modal.show('notice')
-    }
+    },
   
 };
 </script>
 
-<style scoped>
+<style >
 @media screen and (min-width: 1024px) {
   .vm--modal{
     width: 30% !important;
@@ -213,7 +264,6 @@ export default {
 @media screen and (max-width:767px) {
   .vm--modal{
     width: 100% !important;
-    top: 20% !Important;
   }
   
 }
@@ -231,7 +281,11 @@ export default {
   height: auto !important;
 }
 .vm--modal img{
- width: 100%;
-  height: auto;
+ width: 90%;
+  height:auto;
 }
+
+
+
+
 </style>
