@@ -1,33 +1,33 @@
 import { axiosApi } from "@/config/axios"
 
 export const state = {
-   notice : [],
-   noticeLoading : false
+   notices : [],
+   noticesLoading : false
 }
 export const getters = {
-   get_notice : (state)=>state.notice,
-   get_notice_loading : (state)=>state.noticeLoading,
+   get_notices : (state)=>state.notices,
+   get_notices_loading : (state)=>state.noticesLoading,
 
 }
 export const mutations = {
-   set_notice :(state,data) => state.notice = data,
-   set_notice_loading :(state,data) => state.noticeLoading = data
+   set_notices :(state,data) => state.notices = data,
+   set_notices_loading :(state,data) => state.noticesLoading = data
 
 }
 export const actions = {
-   async fetchNotice({commit}){
+   async fetchNotices({commit}){
        try{
-          commit('set_notice_loading',true)
-           var response = await axiosApi.get("notice")
+          commit('set_notices_loading',true)
+           var response = await axiosApi.get("notices")
            console.warn(response.data.data)
        if(response.status==200){
           
-           commit('set_notice',response.data.data)
+           commit('set_notices',response.data.data)
        }
        } catch(e){
            console.warn(e)
        }finally{
-        commit('set_notice_loading',false)
+        commit('set_notices_loading',false)
        }
    }
 }

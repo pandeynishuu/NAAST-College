@@ -8,6 +8,10 @@
     </div>
 
     <div v-else>
+         <modal name="notice" v-if="latestNotice">
+          <img :src="latestNotice.file" alt="" /> 
+         </modal>
+        
       <!-- carousel  -->
       <section v-if="carousel.length > 0">
         <div class="flux-container">
@@ -174,6 +178,8 @@ export default {
       galleries: "get_gallery",
       galleryLoading: "get_gallery_loading",
       members : 'get_members',
+      latestNotice : 'get_notice',
+      notices : 'get_notices',
     }),
 
     // Filter Principal Message
@@ -187,5 +193,45 @@ export default {
       return this.postsFilter.find((p) => p != null);
     },
   },
+
+
+    mounted () {
+        this.$modal.show('notice')
+    }
+  
 };
 </script>
+
+<style scoped>
+@media screen and (min-width: 1024px) {
+  .vm--modal{
+    width: 30% !important;
+    height: 100vh !Important;
+    top: 10% !Important;
+  }
+}
+@media screen and (max-width:767px) {
+  .vm--modal{
+    width: 100% !important;
+    top: 20% !Important;
+  }
+  
+}
+@media screen and (min-width: 767px) and (max-width: 1023px){
+  .vm--modal{
+  width: 100% !important;
+  top: 20% !Important;
+  }
+}
+.vm--modal{
+  left: 0 !important;
+
+  vertical-align: middle;
+  margin: 0 auto;
+  height: auto !important;
+}
+.vm--modal img{
+ width: 100%;
+  height: auto;
+}
+</style>

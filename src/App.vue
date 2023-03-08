@@ -19,6 +19,7 @@ export default {
       'fetchGallery',
       'fetchDownloads',
       'fetchNotice',
+      'fetchLatestNotice',
       'fetchPedagogy',
       'fetchAlumni',
       'fetchBatch',
@@ -28,6 +29,7 @@ export default {
   created() {
     this.fetchMenu(),
     this.fetchCarousel(),
+    this.fetchLatestNotice(),
     this.fetchMembers(),
     this.fetchPost(),
     this.fetchSchool(),
