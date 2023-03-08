@@ -112,7 +112,7 @@
           >
             <div v-for="(gallery, index) in galleries" :key="index">
               <el-card shadow="hover">
-                <img :src="gallery.featuredImage" alt="" />
+                <a :href="gallery.url" target="_blank"><img :src="gallery.featuredImage" alt="" /></a>
                 <div>{{ gallery.title }}</div>
               </el-card>
             </div>
