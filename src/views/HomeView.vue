@@ -8,10 +8,9 @@
     </div>
 
     <div v-else>
-         <modal name="notice" v-if="latestNotice">
+      <modal name="notice" v-if="latestNotice" minWidth="80%">
           <img :src="latestNotice.file" alt="" /> 
-         </modal>
-        
+      </modal>
       <!-- carousel  -->
       <section v-if="carousel.length > 0">
         <div class="flux-container">
@@ -179,6 +178,7 @@ export default {
       galleryLoading: "get_gallery_loading",
       members : 'get_members',
       latestNotice : 'get_notice',
+      latestNoticeLoading : 'get_notice_loading',
       notices : 'get_notices',
     }),
 
@@ -195,7 +195,7 @@ export default {
   },
 
 
-    mounted () {
+    mounted(){
         this.$modal.show('notice')
     }
   
