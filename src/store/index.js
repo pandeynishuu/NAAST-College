@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import * as carousel from './module/home/carousel'
 import * as menu from './module/menu'
-import * as principal from './module/home/principal'
+import * as messages from './module/home/message'
 import * as coordinator from './module/home/coordinator'
 import * as post from './module/post'
 import * as school from './module/school'
@@ -17,13 +17,14 @@ import * as alumini from './module/alumini'
 import * as batch from './module/batch'
 import * as program from './module/home/programs'
 import * as latestNotice from './module/latest_notice'
+import * as facilities from './module/home/facilities'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     carousel,
     menu,
-    principal,
+    messages,
     coordinator,
     post,
     school,
@@ -37,6 +38,7 @@ export default new Vuex.Store({
     alumini,
     batch,
     program,
-    latestNotice
+    latestNotice,
+    facilities
   }
 })

@@ -20,12 +20,12 @@
     </div>
 
     <div v-else>
-      <section class="bg-primary py-1">
+      <section class="bg-white py-1">
           <div class="container d-flex justify-content-between">
             <div class="me-2">Notice:</div>
             <div class="w-100"><marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()" onload="this.start()" direction="left">
               <span v-for="(notice,index) in notices" :key="index" class="me-2">
-               <a class="text-white" href="" @click.prevent="$router.push({name:'notices'})"> <span v-for="(n,i) in notice.notices" :key="i">{{ n.subject }}</span></a>
+               <a class="text-black" href="" @click.prevent="$router.push({name:'notices'})"> <span v-for="(n,i) in notice.notices" :key="i"><i class="fa-solid fa-bullhorn"></i> {{ n.subject }}</span></a>
               </span>
             </marquee>
             </div>
@@ -52,26 +52,30 @@
       </section>
 
       <!-- Message From Principal -->
-      <section v-if="principal" class="py-5">
+      <section  class="py-5" v-for="(message,index) in messages" :key="index">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
-              <img
-                :src="principal.image"
-                class="img-fluid rounded-4"
-                :alt="principal.image"
+            <div class="col-md-12">
+              <h1>{{ message.name }}</h1>
+               <img v-if="index % 2 == 0"
+                :src="message.photo"
+                class="img-fluid rounded-4 float-md-end w-50 ms-4"
+                :alt="message.photo"
               />
-            </div>
-            <div class="col-md-8">
-              <h1>{{ principal.title }}</h1>
-              <div v-html="principal.content"></div>
+              <img v-else
+                :src="message.photo"
+                class="img-fluid rounded-4 float-md-start w-50 me-4"
+                :alt="message.photo"
+              />
+              <div v-html="message.message"></div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Our Facilities -->
-      <section class="py-5 bg-light text-center">
+      <div v-if="facilitiesLoading"></div>
+      <section class="py-5 bg-light text-center" v-else>
         <div class="container">
           <h1>Our Facilities</h1>
           <carousel
@@ -83,36 +87,16 @@
               600: { items: 4, nav: false },
             }"
           >
-            <div>
+            <div  v-for="(facility,index) in facilities" :key="index">
               <el-card shadow="never">
-                  <h5 class="fw-bold">Bus Facilities</h5>
-                  <p>Holy Garden Academy offers convenient bus facilities for students' transportation needs.</p>
+                  <div>
+                     <img :src="facility.image" class="img-fluid" alt="" style="width:100%;height:200px;objectFit:cover">
+                  </div>
+                  <div class="fw-bold text-black  my-2">{{ facility.title }}</div>
+                  <div v-html="facility.description"></div>
                 </el-card>
             </div>
-            <div>
-              <el-card shadow="never">
-                <h5 class="fw-bold">Coaching & Remedial Class</h5>
-                <p>We provide remedial class for the students who are in need of extra guidance and attention.</p>
-              </el-card>
-            </div>
-            <div>
-              <el-card shadow="never">
-                <h5 class="fw-bold">Day Boarder</h5>
-                <p>Holy Garden Academy accommodates day boarders with comfortable facilities.</p>
-              </el-card>
-            </div>
-            <div>
-              <el-card shadow="never">
-                <h5 class="fw-bold">ICT Lab</h5>
-                <p>Holy Garden Academy's state-of-the-art ICT lab provides students with a technology-rich learning environment.</p>
-              </el-card>
-            </div>
-            <div>
-              <el-card shadow="never">
-                <h5 class="fw-bold">Well Equipped Library</h5>
-                <p>Holy Garden Academy's well-equipped library offers vast academic resources.</p>
-              </el-card>
-            </div>
+            
           </carousel>
         </div>
       </section>
@@ -121,23 +105,26 @@
       <section class="py-5">
         <div class="container">
           <div class="row g-2">
-            <div class="col-md-3">
+            <div class="col-md-3 text-center">
               <el-card shadow="hover">
-                <h5>Our Mission</h5>
+                <i class="fa-brands fa-empire fs-1 text-primary"></i>
+                <h5 class="my-2">Our Mission</h5>
               <p>Our school empowers all our students to dream big, believe in their abilities to achieve the dreams through their academic excellence along with their emotional, social and physical well-being.</p>
               </el-card>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 text-center">
               <el-card shadow="hover">
-                <h5>Our Vision</h5>
+                <i class="fa-solid fa-lightbulb fs-1 text-primary"></i>
+                <h5 class="my-2">Our Vision</h5>
               <p>We understand ever individual child is unique with their own god gifted potentials. We aim to hone their talent to excel in life and make a rich for themselves through love, care and inspiration.</p>
               </el-card>
             </div>
 
             <div class="col-md-6">
               <el-card shadow="hover">
-                <h5>Teaching-Learning Pedagogies</h5>
+                <i class="fa-solid fa-chalkboard-user fs-1 text-primary"></i>
+                <h5 class="my-2">Teaching-Learning Pedagogies</h5>
                 <ul>
                   <li>Project Based Learning</li>
                   <li>Using Multiple Intelligence in teaching-learning</li>
@@ -154,7 +141,8 @@
       <!-- Our Feature Plans -->
       <section class="py-5 bg-lightPrimary">
         <div class="container">
-          <h1>Our Feature Plans</h1>
+         
+          <h1 class="my-2"> Our Future Plans <i class="fa-solid fa-lightbulb fs-1"></i></h1>
           <p>We will upgrade the class every year. class 6 (six) this year to class XII, in near future. A very limited number of students would be enrolled every year to maintain Holy Garden's Academic Excellence and it's enviable legacy. We aimed to be best! </p>
         </div>
       </section>
@@ -243,20 +231,13 @@ export default {
       latestNotice : 'get_notice',
       latestNoticeLoading : 'get_notice_loading',
       notices : 'get_notices',
+      messages : 'get_messages',
+      facilities : 'get_facilities',
+      facilitiesLoading : 'get_facilities_loading',
     }),
 
-    // Filter Principal Message
-    postsFilter() {
-      return this.menus.map((m) =>
-        m.posts.find((p) => p.slug == "message-from-principal")
-      );
-    },
-
-    principal() {
-      return this.postsFilter.find((p) => p != null);
-    },
+   
   },
-
 
     mounted(){
         this.$modal.show('notice')

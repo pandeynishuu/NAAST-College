@@ -15,15 +15,22 @@
           <div class="text-white d-flex align-items-center">
             <span
               ><a :href="school.facebook" target="_blank"
-                ><i class="fa-brands fa-facebook fs-4 text-white"></i> </a
+                ><i class="fa-brands fa-facebook  text-white"></i> </a
             ></span>
-            <span
+         
+            <span class="mx-2"
               ><a :href="school.youtube" target="_blank"
-                ><i class="fa-brands fa-youtube fs-4  ms-2"></i></a
+                ><i class="fa-brands fa-youtube"></i></a
+            ></span>
+            
+            <span
+              ><a :href="school.linkedin" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i></a
             ></span>
 
-            <a class="ms-2 btn btn-warning btn-sm" href="/admin/login">Login</a>
-            <a class="ms-2 btn btn-warning btn-sm" href="/webmail">Mail</a>
+            <span class="ms-2">|</span>
+            <a class="ms-2 btn btn-sm text-white" href="/admin/login">Login</a>
+            <a class="ms-2 btn btn-warning btn-sm" href="/webmail"><i class="fa-solid fa-envelope "></i> Web eMail</a>
           </div>
         </div>
       </section>
