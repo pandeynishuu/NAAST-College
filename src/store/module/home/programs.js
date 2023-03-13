@@ -18,7 +18,7 @@ export const actions = {
    async fetchPrograms({commit}){
        try{
           commit('set_program_loading',true)
-           var response = await axiosApi.get("program")
+           var response = await axiosApi.get("programs")
            console.warn(response.data.data)
        if(response.status==200){
           

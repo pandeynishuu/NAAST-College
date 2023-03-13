@@ -84,7 +84,10 @@
           <div class="row">
             <h1>Our Programs</h1>
           <div class="col-md-3" v-for="(program,index) in programs" :key="index">
-            <h5>{{ program.title }}</h5>
+            
+            <el-card shadow="hover">
+              <h5>{{ program.title }}</h5>
+            </el-card>
           </div>
           </div>
         </div>
