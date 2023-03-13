@@ -11,7 +11,7 @@
         <div v-else>
           <h1>{{ pedagogy.title }}</h1>
           <img :src="pedagogy.image" class="float-md-end w-50 " alt="">
-          <div v-html="pedagogy.content"></div>
+          <div v-html="pedagogy.description"></div>
         </div>
       </div>
     </section>

@@ -56,22 +56,17 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4" v-for="(message,index) in messages" :key="index">
-              <div>
-                <img v-if="index % 2 == 0"
+             
+              <img
                 :src="message.photo"
-                class="img-fluid rounded-4 float-md-end w-50 ms-4"
+                class="img-fluid rounded-4"
                 :alt="message.photo"
               />
-              <img v-else
-                :src="message.photo"
-                class="img-fluid rounded-4 float-md-start w-50 me-4"
-                :alt="message.photo"
-              />
-              </div>
-              <h5>{{ message.name }}</h5>
+              
+              <h5 class="my-4">{{ message.name }}</h5>
                
               <div v-html="message.message.toString().substring(0, 1500) + '...'"></div>
-                <a href="#" class='button button2' @click.prevent="$router.push({name:'post',params:{slug:message.slug}})">Read More</a>
+                <a href="#" class='button button2' @click.prevent="$router.push({name:'message',params:{slug:message.slug}})">Read More</a>
             </div>
           </div>
         </div>

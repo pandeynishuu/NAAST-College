@@ -14,6 +14,8 @@
                              <a :href="`tel:${school.contactOne}`" class="text-primary">
                                 <i class="fas fa-phone-square"></i> {{ school.contactOne }} <span v-if="school.contactTwo != null"> / {{school.contactTwo }}</span><br>
                             </a>
+                            <div class="fw-bold">Office Hours:</div>
+                            <a class="text-primary" href="">{{ school.office_hour }}</a>
                             
                         </address>
 

@@ -13,13 +13,15 @@
                         <div class="card-body">
                             <h1> Get in Touch <i class="fa-solid fa-address-card"></i></h1>
                                 <ul class="llist-group">
-                                    <li class="list-group-item"><i class="fa-solid fa-school-circle-check"></i> {{ school.name }}</li>
+                                    <li class="list-group-item fw-bold fs-4">{{ school.name }}</li>
                                     <hr>
                                     <li class="list-group-item"><i class="fa-solid fa-earth-americas"></i> {{ school.street }},{{ school.city }}</li>
                                      <hr>
                                     <li class="list-group-item"><i class="fa-solid fa-square-phone"></i> {{ school.contactOne }} <span v-if="school.contactTwo"> / {{school.contactTwo}}</span></li>
                                     <hr>
                                     <li class="list-group-item"><i class="fa-solid fa-envelope"></i> {{ school.email }}</li>
+                                   <hr>
+                                    <li class="list-group-item"><i class="fa-solid fa-clock"></i> Office Hours: {{ school.office_hour }}</li>
                                 </ul>
                         </div>
                     </div>

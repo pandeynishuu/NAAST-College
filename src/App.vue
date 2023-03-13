@@ -52,11 +52,11 @@ export default {
 
 <style>
 :root {
-  --kPrimary:#01a451 ;
+  --kPrimary:#1B465D ;
   --kSecondary :#ffccff;
-  --kHeading : #000000;
+  --kHeading : #171E0F;
   --kParagraph : #666666;
-  --lightPrimary : #E9F8F0
+  --lightPrimary : #F9FBFF
 
 }
 h1,h2,h3{
