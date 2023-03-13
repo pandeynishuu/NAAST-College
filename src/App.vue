@@ -25,6 +25,7 @@ export default {
       'fetchBatch',
       'fetchMessages',
       'fetchFacilities',
+      'fetchPrograms',
     ])
   },
 
@@ -43,8 +44,8 @@ export default {
     this.fetchAlumni(),
     this.fetchBatch(),
     this.fetchMessages(),
-    this.fetchFacilities()
-
+    this.fetchFacilities();
+    this.fetchPrograms()
   }
 }
 </script>

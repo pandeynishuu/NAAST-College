@@ -1,6 +1,6 @@
 <template>
   <template-view>
-    <modal name="notice" v-if="latestNotice" 
+    <!-- <modal name="notice" v-if="latestNotice" 
     :min-width="200"
     :min-height="200"
     :reset="true"
@@ -11,7 +11,7 @@
     @before-close="beforeClose"
     @closed="closed" class="v-model">
       <img :src="latestNotice.file" alt="" /> 
-  </modal>
+  </modal> -->
     <div
       v-if="loading"
       class="w-100 h-100 d-flex align-items-center justify-content-center"
@@ -51,13 +51,13 @@
         </div>
       </section>
 
-      <!-- Message From Principal -->
-      <section  class="py-5" v-for="(message,index) in messages" :key="index">
+      <!-- Message  -->
+      <section  class="py-5" >
         <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <h1>{{ message.name }}</h1>
-               <img v-if="index % 2 == 0"
+            <div class="col-md-4" v-for="(message,index) in messages" :key="index">
+              <div>
+                <img v-if="index % 2 == 0"
                 :src="message.photo"
                 class="img-fluid rounded-4 float-md-end w-50 ms-4"
                 :alt="message.photo"
@@ -67,8 +67,25 @@
                 class="img-fluid rounded-4 float-md-start w-50 me-4"
                 :alt="message.photo"
               />
-              <div v-html="message.message"></div>
+              </div>
+              <h5>{{ message.name }}</h5>
+               
+              <div v-html="message.message.toString().substring(0, 1500) + '...'"></div>
+                <a href="#" class='button button2' @click.prevent="$router.push({name:'post',params:{slug:message.slug}})">Read More</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Programs -->
+      
+      <section class="py-5 bg-light text-center">
+        <div class="container">
+          <div class="row">
+            <h1>Our Programs</h1>
+          <div class="col-md-3" v-for="(program,index) in programs" :key="index">
+            <h5>{{ program.title }}</h5>
+          </div>
           </div>
         </div>
       </section>
@@ -234,6 +251,8 @@ export default {
       messages : 'get_messages',
       facilities : 'get_facilities',
       facilitiesLoading : 'get_facilities_loading',
+      programs:"get_programs"
+
     }),
 
    
@@ -245,40 +264,89 @@ export default {
   
 };
 </script>
+<style scoped>
 
-<style >
-@media screen and (min-width: 1024px) {
-  .vm--modal{
-    width: 30% !important;
-    height: 100vh !Important;
-    top: 10% !Important;
-  }
+.button {
+  display: inline-block;
+  padding:0.5em 0.5em;
+  letter-spacing: -1px;
+  text-decoration: none;
+  border: solid 2px green;
+  color: #232323;
+  border-radius: 0.4em;
+  transition: all 0.3s linear;
+  animation-iteration-count: infinite;
 }
-@media screen and (max-width:767px) {
-  .vm--modal{
-    width: 100% !important;
-  }
-  
-}
-@media screen and (min-width: 767px) and (max-width: 1023px){
-  .vm--modal{
-  width: 100% !important;
-  top: 20% !Important;
-  }
-}
-.vm--modal{
-  left: 0 !important;
-
-  vertical-align: middle;
-  margin: 0 auto;
-  height: auto !important;
-}
-.vm--modal img{
- width: 90%;
-  height:auto;
+.button:hover {
+  color: #fff;
+  background:var(--kPrimary);
+  animation: none;
 }
 
+.button2 {
+  animation-duration: 1s;
+  animation-name: shaker;
+}
 
+@keyframes shaker {
+  0% {
+    transform: rotate(0deg);
+ }
+  29% {
+    transform: rotate(0deg);
+ }
+  30% {
+    transform: rotate(1deg);
+ }
+  31% {
+    transform: rotate(2deg);
+ }
+  33% {
+    transform: rotate(1deg);
+ }
+  35% {
+    transform: rotate(0deg);
+ }
+  37% {
+    transform: rotate(-1deg);
+ }
+  39% {
+    transform: rotate(-2deg);
+ }
+  41% {
+    transform: rotate(-1deg);
+ }
+  43% {
+    transform: rotate(0deg);
+ }
+  45% {
+    transform: rotate(1deg);
+ }
+  47% {
+    transform: rotate(2deg);
+ }
+  49% {
+    transform: rotate(1deg);
+ }
+  51% {
+    transform: rotate(0deg);
+ }
+  53% {
+    transform: rotate(-1deg);
+ }
+  55% {
+    transform: rotate(-2deg);
+ }
+  57% {
+    transform: rotate(-1deg);
+ }
+  59% {
+    transform: rotate(0deg);
+ }
+  100% {
+    transform: rotate(0deg);
+ }
+}
 
 
 </style>
